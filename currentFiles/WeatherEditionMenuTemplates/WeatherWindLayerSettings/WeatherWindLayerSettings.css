@@ -1,0 +1,309 @@
+/** This mixin makes a single line element fit exactly on the Roboto font for easier integration. */
+/**
+ * Forces z-index above other siblings during a focused parent.
+*/
+weather-wind-layer-settings {
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: stretch;
+}
+weather-wind-layer-settings > div {
+  flex: 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: var(--margin);
+}
+weather-wind-layer-settings > new-push-button.remove {
+  width: 100%;
+  flex: 0 0 auto;
+  margin-top: var(--halfMargin);
+}
+weather-wind-layer-settings .setting {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--w_panelBgc);
+  padding: var(--padding);
+}
+weather-wind-layer-settings .setting:not(:last-of-type) {
+  margin-bottom: var(--margin);
+}
+weather-wind-layer-settings .setting inputable-range ui-input {
+  flex: 0 0 calc(var(--screenHeight) * (84px / 1080) );
+  width: calc(var(--screenHeight) * (84px / 1080) );
+}
+weather-wind-layer-settings .setting .setting-head {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: calc(var(--screenHeight) * (6px / 1080) );
+}
+weather-wind-layer-settings .setting .setting-head .setting-head-title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+weather-wind-layer-settings .setting .setting-head .setting-head-title h1 {
+  flex: 1;
+  font-family: var(--font);
+  font-size: var(--fontSizeDefault);
+  font-weight: 400;
+  margin-bottom: calc(var(--minimalBorderWidth) * 2);
+  text-transform: uppercase;
+}
+weather-wind-layer-settings .setting .setting-head .setting-head-title h2 {
+  margin-left: calc(var(--screenHeight) * (6px / 1080) );
+  font-size: var(--fontSizeParagraph);
+  font-weight: normal;
+}
+weather-wind-layer-settings .setting .setting-head::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 100%;
+  left: 0;
+  height: var(--minimalBorderWidth);
+  background: var(--color-white);
+}
+weather-wind-layer-settings .setting .setting-head ui-input {
+  flex: 0 0 calc(var(--screenHeight) * (84px / 1080) );
+  width: calc(var(--screenHeight) * (84px / 1080) );
+}
+weather-wind-layer-settings .setting.header-settings {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-size: var(--fontSizeDefault);
+}
+weather-wind-layer-settings .setting.header-settings .header-settings__close-button {
+  position: absolute;
+  top: var(--halfMargin);
+  right: var(--halfMargin);
+}
+weather-wind-layer-settings .setting.header-settings .wind-layer-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: calc(var(--screenHeight) * (6px / 1080) );
+  font-size: var(--fontSizeDefault);
+}
+weather-wind-layer-settings .setting.header-settings .wind-layer-title .wind-layer-title-altitude {
+  text-transform: lowercase;
+  font-size: var(--fontSizeDefault);
+}
+weather-wind-layer-settings .setting.header-settings .wind-layer-title .separator {
+  margin: 0 calc(var(--screenHeight) * (6px / 1080) );
+}
+weather-wind-layer-settings .setting.header-settings .wind-layer-short-desc {
+  display: flex;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+weather-wind-layer-settings .setting.general-settings weather-wind-layer-settings-compass {
+  margin: calc(var(--screenHeight) * (6px / 1080) ) 0;
+}
+weather-wind-layer-settings .setting.gust-settings {
+  flex: 1;
+}
+weather-wind-layer-settings .setting.gust-settings weather-wind-layer-settings-compass {
+  margin: calc(var(--screenHeight) * (6px / 1080) ) 0;
+}
+weather-wind-layer-settings .setting.gust-settings h1 {
+  margin-bottom: calc(var(--screenHeight) * (12px / 2160) );
+  flex: 0 0 auto;
+}
+weather-wind-layer-settings .setting.gust-settings weather-wind-layer-settings-gusts-graph {
+  margin-bottom: var(--minimalBorderWidth);
+}
+weather-wind-layer-settings .setting.gust-graph .setting-head {
+  padding: 0;
+  margin-bottom: calc(var(--screenHeight) * (6px / 1080) );
+}
+
+weather-wind-layer-settings-compass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 500;
+  flex: 0 0 auto;
+}
+weather-wind-layer-settings-compass.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+weather-wind-layer-settings-compass.Focused:not(.disabled) {
+  outline: calc(var(--screenHeight) * (6px / 1080) ) solid white;
+}
+weather-wind-layer-settings-compass .wrapper {
+  position: relative;
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+}
+weather-wind-layer-settings-compass .wrapper .compass {
+  position: relative;
+  width: calc(calc(var(--screenHeight) * (92px / 1080) ) + var(--fontSizeParagraph)*1.2 - 18px);
+  height: calc(calc(var(--screenHeight) * (92px / 1080) ) + var(--fontSizeParagraph)*1.2 - 18px);
+  margin: calc(var(--screenHeight) * (30px / 1080) ) 0;
+}
+weather-wind-layer-settings-compass .wrapper .compass::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--screenHeight) * (-5px / 1080) );
+  left: calc(var(--screenHeight) * (-5px / 1080) );
+  right: calc(var(--screenHeight) * (-5px / 1080) );
+  bottom: calc(var(--screenHeight) * (-5px / 1080) );
+  background: var(--backgroundColorContrastedPanel);
+  border-radius: 50%;
+}
+weather-wind-layer-settings-compass .wrapper::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: calc(var(--screenHeight) * (1px / 1080) );
+  height: 80%;
+  background: var(--colorBorderThin);
+  transform: translateY(-50%);
+}
+weather-wind-layer-settings-compass .angle {
+  flex: 0 0 50%;
+  text-shadow: var(--textShadow);
+  pointer-events: none;
+  text-align: center;
+  font-family: var(--font);
+  font-size: var(--fontSizeBig);
+  font-weight: 600;
+}
+weather-wind-layer-settings-compass .north, weather-wind-layer-settings-compass .south, weather-wind-layer-settings-compass .east, weather-wind-layer-settings-compass .west {
+  position: absolute;
+  font-size: var(--sizeParagraph);
+  display: inline-block;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  text-shadow: var(--textShadow);
+  pointer-events: none;
+}
+weather-wind-layer-settings-compass .north {
+  top: 0;
+  text-align: center;
+}
+weather-wind-layer-settings-compass .south {
+  bottom: 0;
+  text-align: center;
+}
+weather-wind-layer-settings-compass .west,
+weather-wind-layer-settings-compass .east {
+  top: 50%;
+  transform: translateY(-50%);
+}
+weather-wind-layer-settings-compass .west {
+  left: 0;
+}
+weather-wind-layer-settings-compass .east {
+  right: 0;
+  text-align: right;
+}
+weather-wind-layer-settings-compass .icon-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  --width: calc(var(--screenHeight) * (50px / 1080) );
+  --height: calc(var(--screenHeight) * (50px / 1080) );
+  --iconColor: var(--enabledColor);
+}
+weather-wind-layer-settings-compass .handle {
+  --width: calc(var(--screenHeight) * (12px / 1080) );
+  --height: calc(var(--screenHeight) * (12px / 1080) );
+  position: absolute;
+  display: block;
+  border: calc(var(--screenHeight) * (2px / 1080) ) solid white;
+  border-radius: 50%;
+  background: var(--primaryColor);
+  bottom: calc(calc(var(--screenHeight) * (-52px / 1080) ) - var(--fontSizeParagraph)*0.6 + 9px);
+  /* we need 1/2 on what we have on .compass*/
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+weather-wind-layer-settings-compass .handle::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--screenHeight) * (5px / 1080) );
+  height: calc(var(--screenHeight) * (9px / 1080) );
+  width: calc(var(--screenHeight) * (3px / 1080) );
+  background: white;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+weather-wind-layer-settings-compass .handle:hover, weather-wind-layer-settings-compass .handle:focus, weather-wind-layer-settings-compass .handle.Focused {
+  background: var(--enabledColor);
+}
+
+weather-wind-layer-settings-gusts-graph {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: calc(var(--screenHeight) * (250px / 2160) );
+}
+weather-wind-layer-settings-gusts-graph .hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  pointer-events: none;
+  z-index: 2;
+}
+weather-wind-layer-settings-gusts-graph .hud .speed,
+weather-wind-layer-settings-gusts-graph .hud .duration,
+weather-wind-layer-settings-gusts-graph .hud .index {
+  position: absolute;
+  font-weight: 500;
+  color: white;
+  box-shadow: var(--filterShadow);
+}
+weather-wind-layer-settings-gusts-graph .hud .speed {
+  top: 0;
+  left: calc(var(--screenHeight) * (8px / 2160) );
+}
+weather-wind-layer-settings-gusts-graph .hud .index {
+  bottom: 0;
+  left: calc(var(--screenHeight) * (8px / 2160) );
+}
+weather-wind-layer-settings-gusts-graph .hud .duration {
+  bottom: 0;
+  right: 0;
+}
+weather-wind-layer-settings-gusts-graph .svg-caroussel {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+weather-wind-layer-settings-gusts-graph svg {
+  width: 200%;
+  height: calc(var(--screenHeight) * (250px / 2160) );
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+weather-wind-layer-settings-gusts-graph svg polyline {
+  fill: none;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=WeatherWindLayerSettings.css.map */

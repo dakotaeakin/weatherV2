@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="WeatherPreset" version="1,3">
+  <Descr>AceXML Document</Descr>
+  <WeatherPreset.Preset>
+    <Name>Unreal Weather - Live METAR</Name>
+    <Image>weather/presets/scattered_clouds.jpg</Image>
+    <Icon>weather/presets/scattered_clouds.svg</Icon>
+    <LayeredImage>weather/presets/scattered_clouds_layer.png</LayeredImage>
+    <IsAltitudeAMGL>True</IsAltitudeAMGL>
+    <CloudLayer>
+      <CloudLayerDensity Value="0.0" Unit="(0 - 1)">
+      </CloudLayerDensity>
+      <CloudLayerAltitudeBot Value="1000.00" Unit="m">
+      </CloudLayerAltitudeBot>
+      <CloudLayerAltitudeTop Value="1050.000" Unit="m">
+      </CloudLayerAltitudeTop>
+      <CloudLayerScattering Value="0.0" Unit="(0 - 1)">
+      </CloudLayerScattering>
+    </CloudLayer>
+    <CloudLayer>
+      <CloudLayerDensity Value="0.0" Unit="(0 - 1)">
+      </CloudLayerDensity>
+      <CloudLayerAltitudeBot Value="4000.000" Unit="m">
+      </CloudLayerAltitudeBot>
+      <CloudLayerAltitudeTop Value="4050.000" Unit="m">
+      </CloudLayerAltitudeTop>
+      <CloudLayerScattering Value="0.000" Unit="(0 - 1)">
+      </CloudLayerScattering>
+    </CloudLayer>
+    <CloudLayer>
+      <CloudLayerDensity Value="0.0" Unit="(0 - 1)">
+      </CloudLayerDensity>
+      <CloudLayerAltitudeBot Value="10000.000" Unit="m">
+      </CloudLayerAltitudeBot>
+      <CloudLayerAltitudeTop Value="10050.000" Unit="m">
+      </CloudLayerAltitudeTop>
+      <CloudLayerScattering Value="0.000" Unit="(0 - 1)">
+      </CloudLayerScattering>
+    </CloudLayer>
+    <WindLayer>
+      <WindLayerAltitude Value="0.000" Unit="m">
+      </WindLayerAltitude>
+      <WindLayerAngle Value="270.000" Unit="degrees">
+      </WindLayerAngle>
+      <WindLayerSpeed Value="0.000" Unit="knts">
+      </WindLayerSpeed>
+      <GustWave>
+        <GustWaveInterval Value="60.000" Unit="sec">
+        </GustWaveInterval>
+        <GustWaveDuration Value="35.000" Unit="sec">
+        </GustWaveDuration>
+        <GustWaveSpeed Value="0.0" Unit="knts">
+        </GustWaveSpeed>
+        <GustAngle Value="270.000" Unit="degrees">
+        </GustAngle>
+      </GustWave>
+    </WindLayer>
+    <WindLayer>
+      <WindLayerAltitude Value="1524.000" Unit="m">
+      </WindLayerAltitude>
+      <WindLayerAngle Value="270.000" Unit="degrees">
+      </WindLayerAngle>
+      <WindLayerSpeed Value="0.000" Unit="knts">
+      </WindLayerSpeed>
+      <GustWave>
+        <GustWaveInterval Value="60.000" Unit="sec">
+        </GustWaveInterval>
+        <GustWaveDuration Value="35.000" Unit="sec">
+        </GustWaveDuration>
+        <GustWaveSpeed Value="0.0" Unit="knts">
+        </GustWaveSpeed>
+        <GustAngle Value="270.000" Unit="degrees">
+        </GustAngle>
+      </GustWave>
+    </WindLayer>
+    <WindLayer>
+      <WindLayerAltitude Value="3048.000" Unit="m">
+      </WindLayerAltitude>
+      <WindLayerAngle Value="270.000" Unit="degrees">
+      </WindLayerAngle>
+      <WindLayerSpeed Value="0.000" Unit="knts">
+      </WindLayerSpeed>
+      <GustWave>
+        <GustWaveInterval Value="60.000" Unit="sec">
+        </GustWaveInterval>
+        <GustWaveDuration Value="35.000" Unit="sec">
+        </GustWaveDuration>
+        <GustWaveSpeed Value="0.0" Unit="knts">
+        </GustWaveSpeed>
+        <GustAngle Value="270.000" Unit="degrees">
+        </GustAngle>
+      </GustWave>
+    </WindLayer>
+    <WindLayer>
+      <WindLayerAltitude Value="4572.000" Unit="m">
+      </WindLayerAltitude>
+      <WindLayerAngle Value="270.000" Unit="degrees">
+      </WindLayerAngle>
+      <WindLayerSpeed Value="0.000" Unit="knts">
+      </WindLayerSpeed>
+      <GustWave>
+        <GustWaveInterval Value="60.000" Unit="sec">
+        </GustWaveInterval>
+        <GustWaveDuration Value="35.000" Unit="sec">
+        </GustWaveDuration>
+        <GustWaveSpeed Value="0.0" Unit="knts">
+        </GustWaveSpeed>
+        <GustAngle Value="270.000" Unit="degrees">
+        </GustAngle>
+      </GustWave>
+    </WindLayer>
+    <WindLayer>
+      <WindLayerAltitude Value="6096.000" Unit="m">
+      </WindLayerAltitude>
+      <WindLayerAngle Value="270.000" Unit="degrees">
+      </WindLayerAngle>
+      <WindLayerSpeed Value="0.000" Unit="knts">
+      </WindLayerSpeed>
+      <GustWave>
+        <GustWaveInterval Value="60.000" Unit="sec">
+        </GustWaveInterval>
+        <GustWaveDuration Value="35.000" Unit="sec">
+        </GustWaveDuration>
+        <GustWaveSpeed Value="0.0" Unit="knts">
+        </GustWaveSpeed>
+        <GustAngle Value="270.000" Unit="degrees">
+        </GustAngle>
+      </GustWave>
+    </WindLayer>
+    <WindLayer>
+      <WindLayerAltitude Value="9144.000" Unit="m">
+      </WindLayerAltitude>
+      <WindLayerAngle Value="270.000" Unit="degrees">
+      </WindLayerAngle>
+      <WindLayerSpeed Value="0.000" Unit="knts">
+      </WindLayerSpeed>
+      <GustWave>
+        <GustWaveInterval Value="60.000" Unit="sec">
+        </GustWaveInterval>
+        <GustWaveDuration Value="35.000" Unit="sec">
+        </GustWaveDuration>
+        <GustWaveSpeed Value="0.0" Unit="knts">
+        </GustWaveSpeed>
+        <GustAngle Value="270.000" Unit="degrees">
+        </GustAngle>
+      </GustWave>
+    </WindLayer>
+    <WindLayer>
+      <WindLayerAltitude Value="12192.000" Unit="m">
+      </WindLayerAltitude>
+      <WindLayerAngle Value="270.000" Unit="degrees">
+      </WindLayerAngle>
+      <WindLayerSpeed Value="0.000" Unit="knts">
+      </WindLayerSpeed>
+      <GustWave>
+        <GustWaveInterval Value="60.000" Unit="sec">
+        </GustWaveInterval>
+        <GustWaveDuration Value="35.000" Unit="sec">
+        </GustWaveDuration>
+        <GustWaveSpeed Value="0.0" Unit="knts">
+        </GustWaveSpeed>
+        <GustAngle Value="270.000" Unit="degrees">
+        </GustAngle>
+      </GustWave>
+    </WindLayer>
+    <WindLayer>
+      <WindLayerAltitude Value="15240.000" Unit="m">
+      </WindLayerAltitude>
+      <WindLayerAngle Value="270.000" Unit="degrees">
+      </WindLayerAngle>
+      <WindLayerSpeed Value="0.000" Unit="knts">
+      </WindLayerSpeed>
+      <GustWave>
+        <GustWaveInterval Value="60.000" Unit="sec">
+        </GustWaveInterval>
+        <GustWaveDuration Value="35.000" Unit="sec">
+        </GustWaveDuration>
+        <GustWaveSpeed Value="0.0" Unit="knts">
+        </GustWaveSpeed>
+        <GustAngle Value="270.000" Unit="degrees">
+        </GustAngle>
+      </GustWave>
+    </WindLayer>
+    <MSLPressure Value="101325.000" Unit="pa">
+    </MSLPressure>
+    <MSLTemperature Value="288.150" Unit="k">
+    </MSLTemperature>
+    <AerosolDensity Value="1.000" Unit="m">
+    </AerosolDensity>
+    <Precipitations Value="0.000" Unit="mm/h">
+    </Precipitations>
+    <SnowCover Value="0.000" Unit="m">
+    </SnowCover>
+    <ThunderstormIntensity Value="0.000" Unit="(0 - 1)">
+    </ThunderstormIntensity>
+  </WeatherPreset.Preset>
+</SimBase.Document>

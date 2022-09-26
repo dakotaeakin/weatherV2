@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<SimBase.Document Type="InGamePanels" version="1,0">
+  <Filename>InGamePanel_Weather.spb</Filename>
+  <InGamePanels.InGamePanelDefinition id="PANEL_WEATHER" Name="TT:GAME.PANEL_NAME_WEATHER" url="html_UI/ingamePanels/WeatherToolbarPanel/WeatherToolbarPanel.html" resizeDirections="Both" minWidth="58.000" minHeight="72.000" defaultWidth="66.019" defaultHeight="79.259" defaultTop="15.278" defaultLeft="57.037" icon="ICON_TOOLBAR_WEATHER" buttonVisible="false">
+    <AvailableInDevMode>true</AvailableInDevMode>
+  </InGamePanels.InGamePanelDefinition>
+</SimBase.Document>

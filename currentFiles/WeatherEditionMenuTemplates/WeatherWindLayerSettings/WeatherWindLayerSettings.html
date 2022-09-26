@@ -1,0 +1,83 @@
+﻿<!-- DOT NO LOAD ANY Dependencies here -->
+<link rel="stylesheet" href="./WeatherWindLayerSettings.css" />
+
+<script type="text/html" id="WeatherWindLayerSettingsCompassTemplate" is-padscroll-target no-padscroll-acceleration>
+    <div class="wrapper">
+        <div class="compass">
+            <div class="north" data-l10n-id="TT:MENU.WEATHER_TOOLBAR_PANEL_WIND_LAYER_SETTINGS_CARDINAL_NORTH"></div>
+            <div class="east" data-l10n-id="TT:MENU.WEATHER_TOOLBAR_PANEL_WIND_LAYER_SETTINGS_CARDINAL_EAST"></div>
+            <div class="south" data-l10n-id="TT:MENU.WEATHER_TOOLBAR_PANEL_WIND_LAYER_SETTINGS_CARDINAL_SOUTH"></div>
+            <div class="west" data-l10n-id="TT:MENU.WEATHER_TOOLBAR_PANEL_WIND_LAYER_SETTINGS_CARDINAL_WEST"></div>
+            <div class="icon-arrow">
+                <icon-element data-url="/icons/weather/ICON_ARROW_WEATHER.svg"></icon-element>
+                <icon-element no-key-navigation class="handle"></icon-element>
+            </div>
+        </div>
+    </div>
+    <div class="angle hide"></div>
+</script>
+
+
+<script type="text/html" id="WeatherWindLayerSettingsGustGraphTemplate">
+    <div class="hud">
+        <div class="speed"></div>
+        <div class="index">0</div>
+        <div class="duration"></div>
+    </div>
+    <div class="svg-caroussel">
+        <div class="caroussel">
+            <svg xmlns="http://www.w3.org/2000/svg">
+            </svg>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="WeatherWindLayerSettingsTemplate"  vertical-navigation="#wind, #wind-layer-speed-input, #windgusts, #gust-freq-input, #gust-speed-input, .remove" default-child-button="#wind-layer-speed-input" auto-inside>
+    <virtual-scroll class="condensed" direction="y">
+        <ui-element class="header-settings setting">
+            <div class="wind-layer-title">
+                <l10n-label key="TT:MENU.WINDS"></l10n-label>
+                <p class="separator">-</p>
+                <p class="wind-layer-title-altitude"></p>
+            </div>
+            <div class="wind-layer-short-desc"></div>
+            <icon-button class="header-settings__close-button CloseSettings" data-url="/icons/toolbar/ICON_TOOLBAR_CLOSE.svg" icon-tooltip="TT:MENU.CLOSE"></icon-button>
+        </ui-element>
+        
+        <ui-element class="general-settings setting">
+            <div class="setting-head">
+                <div class="setting-head-title">
+                    <h1 data-l10n-id="TT:MENU.WEATHER_TOOLBAR_PANEL_WIND_LAYER_SETTINGS_TITLE"></h1>
+                    <h2>(<span data-l10n-id="TT:MENU.WEATHER_WIND_FROM"></span>)</h2>
+                </div>
+                <ui-input no-tooltip id="windAngleNumberInput"></ui-input>
+            </div>
+            <weather-wind-layer-settings-compass id="wind"></weather-wind-layer-settings-compass>
+            <inputable-range id="wind-layer-speed-input" step="0.1" log-range label="TT:MENU.WEATHER_TOOLBAR_PANEL_WIND_LAYER_SETTINGS_SPEED"></inputable-range>
+        </ui-element>
+
+        <ui-element class="gust-settings setting">
+            <div class="setting-head">
+                <div class="setting-head-title">
+                    <h1 data-l10n-id="TT:MENU.WEATHER_TOOLBAR_PANEL_WIND_LAYER_SETTINGS_GUST_TITLE"></h1>
+                    <h2>(<span data-l10n-id="TT:MENU.WEATHER_WIND_FROM"></span>)</h2>
+                </div>
+                <ui-input no-tooltip id="windGustAngleNumberInput"></ui-input>
+            </div>
+            <weather-wind-layer-settings-compass id="windgusts"></weather-wind-layer-settings-compass>
+            <inputable-range id="gust-speed-input" log-range label="TT:MENU.WEATHER_TOOLBAR_PANEL_WIND_LAYER_SETTINGS_SPEED"></inputable-range>
+            <inputable-range id="gust-freq-input" label="TT:MENU.WEATHER_TOOLBAR_PANEL_WIND_LAYER_SETTINGS_GUST_PER_MINUTE"></inputable-range>
+        </ui-element>
+
+        <ui-element class="gust-graph setting">
+            <div class="setting-head">
+                <div class="setting-head-title">
+                    <h1 data-l10n-id="TT:MENU.WEATHER_TOOLBAR_PANEL_WIND_LAYER_SETTINGS_GUST_GRAPH_TITLE"></h1>
+                </div>
+            </div>
+            <weather-wind-layer-settings-gusts-graph></weather-wind-layer-settings-gusts-graph>
+        </ui-element>
+    </virtual-scroll>
+    <new-push-button class="remove" title="TT:MENU.WEATHER_TOOLBAR_PANEL_WIND_LAYER_DELETE" default-button></new-push-button>
+</script>
+<script type="text/html" import-script="/templates/WeatherEditionMenu/WeatherEditionMenuTemplates/WeatherWindLayerSettings/WeatherWindLayerSettings.js"></script>

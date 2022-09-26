@@ -1,0 +1,190 @@
+/** This mixin makes a single line element fit exactly on the Roboto font for easier integration. */
+/**
+ * Forces z-index above other siblings during a focused parent.
+*/
+weather-edition-menu.in-menu {
+  --margin: var(--halfMargin);
+  --innerMargin: var(--baseMargin);
+  --padding: var(--halfMargin);
+}
+weather-edition-menu.in-menu > .panels > .panel.main, weather-edition-menu.in-menu > .panels > .panel.sub {
+  flex: 1 1 50%;
+}
+
+weather-edition-menu {
+  --w_primaryColor: var(--primaryColor);
+  --w_disabledColor: var(--darkColor);
+  --w_panelBgc: var(--backgroundColorPanel);
+  --w_panelDarkerBgc: var(--backgroundColorDoublePanel);
+  display: flex;
+  flex-direction: column;
+  --margin: var(--quartMargin);
+  --innerMargin: var(--halfMargin);
+  --padding: var(--halfMargin);
+}
+weather-edition-menu.disabled .top, weather-edition-menu.disabled .sub-top {
+  pointer-events: none;
+  opacity: 0.3;
+}
+weather-edition-menu > .top {
+  margin-bottom: var(--margin);
+}
+weather-edition-menu > .top,
+weather-edition-menu > .panels,
+weather-edition-menu > .sub-top {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+}
+weather-edition-menu > .top,
+weather-edition-menu > .sub-top {
+  background-color: var(--w_panelBgc);
+  padding: var(--margin);
+}
+weather-edition-menu .panels {
+  flex: 1 1;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  position: relative;
+  margin-top: var(--quartMargin);
+}
+weather-edition-menu .panels > .panel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+weather-edition-menu .panels > .panel:not(:first-child) {
+  margin-left: var(--quartMargin);
+}
+weather-edition-menu .panels > .panel:not(.sub) {
+  flex: 2 1 auto;
+}
+weather-edition-menu .panels > .panel:not(:last-of-type) {
+  margin-right: var(--margin);
+}
+weather-edition-menu .panels > .panel.sub {
+  flex: 1 1 calc(var(--screenHeight) * (280px / 1080) );
+  min-width: calc(var(--screenHeight) * (330px / 1080) );
+}
+weather-edition-menu > .sub-top {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin-bottom: var(--margin);
+}
+weather-edition-menu > .sub-top flight-time-slider {
+  width: 100%;
+  background: none;
+}
+weather-edition-menu > .sub-top flight-time-slider .flight-timer-container {
+  background: none;
+}
+weather-edition-menu > .sub-top flight-time-slider new-range-element.FlightTime {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+  padding: 0;
+}
+weather-edition-menu > .sub-top flight-time-slider new-range-element.FlightTime .mainbutton {
+  position: static;
+  width: 100%;
+}
+weather-edition-menu > .sub-top flight-time-slider new-range-element.FlightTime .backPanel {
+  background: none;
+}
+weather-edition-menu > .sub-top flight-time-slider new-range-element.FlightTime:hover .backPanel {
+  background: none;
+}
+weather-edition-menu .panels.disabled,
+weather-edition-menu .sub-top.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+weather-edition-menu .panels.disabled .wind-lines,
+weather-edition-menu .panels.disabled .cloud-lines,
+weather-edition-menu .sub-top.disabled .wind-lines,
+weather-edition-menu .sub-top.disabled .cloud-lines {
+  display: none;
+}
+weather-edition-menu .weather-edition__time {
+  display: flex;
+  flex: 0 0 auto;
+  margin-top: var(--quartMargin);
+}
+weather-edition-menu .weather-edition__time flight-time-slider {
+  flex: 1 1 50%;
+}
+weather-edition-menu .weather-edition__title-line {
+  display: flex;
+  height: calc(var(--screenHeight) * (42px / 1080) );
+  flex: 0 0 auto;
+}
+weather-edition-menu .weather-edition__title-line:not(:first-child) {
+  margin-top: var(--quartMargin);
+}
+weather-edition-menu .weather-edition__title-line toggle-button {
+  min-width: calc(var(--screenHeight) * (230px / 1080) );
+  height: auto;
+  margin-left: var(--quartMargin);
+  background-color: var(--w_panelDarkerBgc);
+}
+weather-edition-menu .weather-edition__title-line toggle-button .ToggleButton .toggleButtonWrapper {
+  padding: 0;
+}
+weather-edition-menu .weather-edition__preset {
+  background-color: var(--w_panelBgc);
+  padding: var(--halfMargin);
+}
+weather-edition-menu .weather-edition__preset.disabled {
+  opacity: 0.3;
+}
+weather-edition-menu .weather-edition__title {
+  flex: 1 1 auto;
+  padding: var(--halfMargin);
+  display: flex;
+  font-weight: 700;
+  text-transform: uppercase;
+  align-items: center;
+  background-color: var(--w_panelDarkerBgc);
+}
+weather-edition-menu .weather-edition__date-picker {
+  margin-left: var(--quartMargin);
+  flex: 1 1 50%;
+  padding: var(--halfMargin);
+  background-color: var(--w_panelBgc);
+}
+weather-edition-menu .weather-edition__weather-section {
+  margin-top: var(--quartMargin);
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+weather-edition-menu .weather-edition__live-overlay {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--backgroundColorOverlay);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+weather-edition-menu .weather-edition__live-overlay .titles {
+  display: flex;
+}
+weather-edition-menu .weather-edition__live-overlay .titles l10n-label {
+  font-size: calc(var(--screenHeight) * (60px / 1080) );
+}
+weather-edition-menu .weather-edition__live-overlay .titles icon-element {
+  --width: calc(var(--screenHeight) * (120px / 1080) );
+  --height: calc(var(--screenHeight) * (120px / 1080) );
+  margin: calc(var(--screenHeight) * (-20px / 1080) );
+}
+
+/*# sourceMappingURL=WeatherEditionMenu.css.map */

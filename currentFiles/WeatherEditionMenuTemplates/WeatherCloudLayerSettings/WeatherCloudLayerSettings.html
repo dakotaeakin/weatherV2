@@ -1,0 +1,25 @@
+﻿<!-- DOT NO LOAD ANY Dependencies here -->
+<link rel="stylesheet" href="./WeatherCloudLayerSettings.css" />
+<script type="text/html" id="WeatherCloudLayerSettingsTemplate" vertical-navigation=".toggleTab,.coverage,.scatter,.altTop,.altBot,.remove" default-child-button=".coverage">
+    <div class="tabs">
+        <div class="buttonWrapper hide">
+            <new-push-button class="toggleTab selected" title="TT:MENU.WEATHER_TOOLBAR_PANEL_CLOUD_LAYER_SETTINGS_TAB_MAIN" data-target=".Main"></new-push-button>
+        </div>
+        <virtual-scroll class="toggleTabTarget Main list-with-buttons" direction="y">
+            <div class="weather-settings__title">
+                <ui-marquee>
+                    <l10n-label key="TT:MENU.WEATHER.CLOUD_LAYER"></l10n-label>
+                </ui-marquee>
+                <icon-button class="condensed-interactive weather-settings__close-button CloseSettings" data-url="/icons/toolbar/ICON_TOOLBAR_CLOSE.svg" icon-tooltip="TT:MENU.CLOSE"></icon-button>
+            </div>
+            <inputable-range default-button class="coverage"></inputable-range>
+            <inputable-range default-button class="density"></inputable-range>
+            <inputable-range default-button class="scatter"></inputable-range>
+            <inputable-range default-button class="altTop" min="0.00" max="0.00" step="10" label="TT:MENU.WEATHER_TOOLBAR_PANEL_CLOUD_LAYER_SETTINGS_ALT_TOP"></inputable-range>
+            <inputable-range default-button class="altBot" min="0.00" max="0.00" step="10" label="TT:MENU.WEATHER_TOOLBAR_PANEL_CLOUD_LAYER_SETTINGS_ALT_BOT"></inputable-range>
+        </virtual-scroll>
+        <virtual-scroll class="toggleTabTarget Option Option1 hide" direction="y"></virtual-scroll>
+    </div>
+    <new-push-button class="remove hide" title="TT:MENU.WEATHER_TOOLBAR_PANEL_CLOUD_LAYER_SETTINGS_DELETE"></new-push-button>
+</script>
+<script type="text/html" import-script="/templates/WeatherEditionMenu/WeatherEditionMenuTemplates/WeatherCloudLayerSettings/WeatherCloudLayerSettings.js"></script>

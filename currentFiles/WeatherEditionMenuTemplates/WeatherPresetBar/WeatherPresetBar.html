@@ -1,0 +1,22 @@
+﻿<!-- DOT NO LOAD ANY Dependencies here -->
+<link rel="stylesheet" href="./WeatherPresetBar.css" />
+<!--<script type="text/html" id="WeatherPresetBarTemplate" grid-navigation navigation-stay-inside>
+    
+        <drop-down  local-grid="1/1"  default-button class="WeatherPresetBarButton"></drop-down>
+        <icon-button local-grid="2/1" class="WeatherPresetBarButton save" disabled="true" data-url="/icons/ICON_SAVE.svg"></icon-button>
+        <icon-button local-grid="3/1" class="WeatherPresetBarButton saveAs" disabled="true" data-url="/icons/ICON_SAVE_AS.svg"></icon-button>
+        <icon-button local-grid="4/1" class="WeatherPresetBarButton edit" disabled="true" data-url="/icons/ICON_MAP_AIRCRAFT_SYSTEM.svg"></icon-button>
+        <icon-button local-grid="5/1" class="WeatherPresetBarButton remove" disabled="true" data-url="/icons/ICON_TRASH.svg"></icon-button>
+    
+</script>-->
+
+<script type="text/html" id="WeatherPresetBarTemplate" horizontal-navigation=".WeatherPresetBarButton">
+
+    <drop-down default-button class="WeatherPresetBarButton condensed-interactive"></drop-down>
+    <icon-button class="WeatherPresetBarButton save condensed-interactive" disabled="true" data-url="/icons/ICON_SAVE.svg" icon-tooltip="TT:MENU.SAVE"></icon-button>
+    <icon-button class="WeatherPresetBarButton saveAs condensed-interactive" disabled="true" data-url="/icons/ICON_SAVE_AS.svg" icon-tooltip="TT:MENU.SAVE_AS"></icon-button>
+    <icon-button class="WeatherPresetBarButton edit condensed-interactive" disabled="true" data-url="/icons/ICON_MAP_AIRCRAFT_SYSTEM.svg" icon-tooltip="TT:MENU.EDIT"></icon-button>
+    <icon-button class="WeatherPresetBarButton remove condensed-interactive" disabled="true" data-url="/icons/ICON_TRASH.svg" icon-tooltip="TT:MENU.REMOVE"></icon-button>
+
+</script>
+<script type="text/html" import-script="/templates/WeatherEditionMenu/WeatherEditionMenuTemplates/WeatherPresetBar/WeatherPresetBar.js"></script>

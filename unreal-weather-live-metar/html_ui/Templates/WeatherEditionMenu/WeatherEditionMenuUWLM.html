@@ -1,0 +1,68 @@
+﻿<!-- Services -->
+<script type="text/html" import-script="/JS/animation/animation.js"></script>
+<script type="text/javascript" src="/JS/simvar.js"></script>
+
+<!-- Dependencies -->
+<script type="text/html" import-template="/templates/toggleButton/toggleButton.html"></script>
+<script type="text/html" import-template="/templates/uiInput/uiInput.html"></script>
+<script type="text/html" import-template="/templates/NewPushButton/NewPushButton.html"></script>
+<script type="text/html" import-template="/templates/DropDown/DropDown.html"></script>
+<script type="text/html" import-template="/templates/InputableRange/InputableRange.html"></script>
+<script type="text/html" import-template="/templates/NewListButton/NewListButton.html"></script>
+<script type="text/html" import-template="/templates/virtualScroll/virtualScroll.html"></script>
+
+<!-- Weather Sub-Components -->
+<script type="text/html" import-template="/templates/WeatherEditionMenu/WeatherEditionMenuTemplates/WeatherPresetBar/WeatherPresetBar.html"></script>
+<script type="text/html" import-template="/templates/WeatherEditionMenu/WeatherEditionMenuTemplates/WeatherSettings/WeatherSettings.html"></script>
+<script type="text/html" import-template="/templates/WeatherEditionMenu/WeatherEditionMenuTemplates/WeatherWindLayerSettings/WeatherWindLayerSettings.html"></script>
+<script type="text/html" import-template="/templates/WeatherEditionMenu/WeatherEditionMenuTemplates/WeatherCloudLayerSettings/WeatherCloudLayerSettings.html"></script>
+<script type="text/html" import-template="/templates/WeatherEditionMenu/WeatherEditionMenuTemplates/WeatherPresetPlan/WeatherPresetPlan.html"></script>
+<script type="text/html" import-template="/templates/UIInput/UIInput.html"></script>
+<script type="text/html" import-template="/Pages/FlightPlanning/Components/FlightPlanningComponents.html"></script>
+
+<link rel="stylesheet" href="./WeatherEditionMenu.css" />
+<script type="text/html" id="WeatherEditionMenuTemplate">
+    <div class="weather-edition__title-line">
+        <div class="weather-edition__title">
+            <l10n-label key="TT:TIME.TIME"></l10n-label>
+        </div> 
+        <toggle-button id="ToggleTimeLive" class="condensed-interactive" title="TT:TIME.LIVE_TIME" full-line-select></toggle-button>
+    </div>
+    <div class="weather-edition__time">
+        <flight-time-slider local-grid="1-2/2" grid-group="weather" id="WeatherFlightTimeSlider" display-live inputable default-button></flight-time-slider>
+        <div class="weather-edition__date-picker">
+            <date-picker id="datePicker" class="listButtonWrapper date-picker--inline" auto-inside></date-picker>
+        </div>
+    </div>
+
+    <div class="weather-edition__title-line">
+        <div class="weather-edition__title">
+            <l10n-label key="TT:MENU.FLIGHTCONDITION.WEATHER"></l10n-label>
+        </div>   
+        <toggle-button id="ToggleWeatherLive" class="condensed-interactive" title="TT:MENU.WEATHER_TOOLBAR_PANEL_LIVE_WEATHER" full-line-select></toggle-button>
+    </div>
+    <div class="weather-edition__weather-section">
+        <div class="weather-edition__live-overlay WeatherLiveOverlay hide">
+            <div class="titles">
+            <icon-element data-url="/icons/live_layer.svg"></icon-element>
+            <l10n-label key="TT:MENU.DATA_LIVE_WEATHER"></l10n-label>
+        </div>
+            <new-push-button class="GoToMetarPanelButton condensed-interactive" title="TT:MENU.WEATHER_TOOLBAR_PANEL_METAR_TAF_BUTTON"></new-push-button>
+        </div>
+        <div class="weather-edition__preset WeatherPresetBarContainer">
+            <weather-preset-bar local-grid="1-2/1" grid-group="weather" default-button auto-inside></weather-preset-bar>
+        </div>
+        <div class="panels">
+            <weather-preset-plan local-grid="1/3" grid-group="weather" auto-inside></weather-preset-plan>
+
+            <ui-navigation-bloc class="sub panel condensedPanel" local-grid="2/3" grid-group="weather" auto-inside auto-exit>
+
+                <weather-settings default-button id="sub_weather_settings" class="hide"></weather-settings>
+                <weather-wind-layer-settings default-button id="sub_wind_layer_settings" class="hide"></weather-wind-layer-settings>
+                <weather-cloud-layer-settings default-button id="sub_cloud_layer_settngs" class="hide"></weather-cloud-layer-settings>
+            </ui-navigation-bloc>
+
+        </div>
+    </div>
+</script>
+<script type="text/html" import-script="/templates/WeatherEditionMenu/WeatherEditionMenuUWLM.js"></script>

@@ -1,0 +1,25 @@
+﻿<!-- DOT NO LOAD ANY Dependencies here -->
+<link rel="stylesheet" href="./WeatherSettings.css" />
+
+<script no-screen-reader type="text/html" id="WeatherDatePickerTemplate">
+    <div id="dayWrapper" class="listButtonWrapper">
+    </div>
+</script>
+
+<script type="text/html" id="WeatherSettingsTemplate" default-child-button="#datePicker" vertical-navigation="#datePicker, .altitudeCalculation, .groundSnow, .groundSnow, .aerosolDensity, .precipitations, .lightning, .groundTemp, .isa, .groundPress">
+    <virtual-scroll direction="y" class="condensed">
+        <div class="weather-settings-main">
+            <div class="weather-settings__title" data-l10n-id="TT:MENU.WEATHER_TOOLBAR_PANEL_SETTINGS_TITLE"></div>
+            <new-list-button class="altitudeCalculation" themes="wraptitle"></new-list-button>
+            <inputable-range class="precipitations"></inputable-range>
+            <inputable-range class="groundSnow"></inputable-range>
+            <inputable-range class="lightning"></inputable-range>
+            <inputable-range class="pollution hide"></inputable-range>
+            <inputable-range class="groundTemp"></inputable-range>
+            <inputable-range class="groundPress"></inputable-range>
+            <inputable-range class="humidity"></inputable-range>
+        </div>
+    </virtual-scroll>
+    
+</script>
+<script type="text/html" import-script="/templates/WeatherEditionMenu/WeatherEditionMenuTemplates/WeatherSettings/WeatherSettings.js"></script>

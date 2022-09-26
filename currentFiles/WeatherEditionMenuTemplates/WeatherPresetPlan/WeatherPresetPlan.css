@@ -1,0 +1,403 @@
+/** This mixin makes a single line element fit exactly on the Roboto font for easier integration. */
+/**
+ * Forces z-index above other siblings during a focused parent.
+*/
+weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsDragging icon-button.condensed-interactive, weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsResizing icon-button.condensed-interactive, weather-preset-plan weather-preset-plan-wind-line.Focused .container > .condensed-interactive.icon, weather-preset-plan weather-preset-plan-cloud-line.Focused .container > .condensed-interactive.icon, weather-preset-plan weather-preset-plan-cloud-line[dragging=true] .condensed-interactive.icon, weather-preset-plan weather-preset-plan-cloud-line[resizing=true] .condensed-interactive.icon {
+  --outlineWidth: var(--quartMargin);
+}
+weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsDragging icon-button.selected.condensed-interactive:before, weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsResizing icon-button.selected.condensed-interactive:before, weather-preset-plan weather-preset-plan-wind-line.Focused .container > .selected.condensed-interactive.icon:before, weather-preset-plan weather-preset-plan-cloud-line.Focused .container > .selected.condensed-interactive.icon:before, weather-preset-plan weather-preset-plan-cloud-line[dragging=true] .selected.condensed-interactive.icon:before, weather-preset-plan weather-preset-plan-cloud-line[resizing=true] .selected.condensed-interactive.icon:before {
+  border-width: var(--minimalBorderWidth) !important;
+}
+weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsDragging icon-button.condensed-interactive:before, weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsResizing icon-button.condensed-interactive:before, weather-preset-plan weather-preset-plan-wind-line.Focused .container > .condensed-interactive.icon:before, weather-preset-plan weather-preset-plan-cloud-line.Focused .container > .condensed-interactive.icon:before, weather-preset-plan weather-preset-plan-cloud-line[dragging=true] .condensed-interactive.icon:before, weather-preset-plan weather-preset-plan-cloud-line[resizing=true] .condensed-interactive.icon:before {
+  animation: outlineFocusAppear 0.1s backwards;
+}
+
+weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsDragging icon-button, weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsResizing icon-button, weather-preset-plan weather-preset-plan-wind-line.Focused .container > .icon, weather-preset-plan weather-preset-plan-cloud-line.Focused .container > .icon, weather-preset-plan weather-preset-plan-cloud-line[dragging=true] .icon, weather-preset-plan weather-preset-plan-cloud-line[resizing=true] .icon {
+  --outlineWidth: var(--halfMargin);
+  --outlineOffset: calc(-1 * var(--outlineWidth));
+  position: relative;
+}
+weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsDragging icon-button[no-focus-white]:before, weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsResizing icon-button[no-focus-white]:before, weather-preset-plan weather-preset-plan-wind-line.Focused .container > [no-focus-white].icon:before, weather-preset-plan weather-preset-plan-cloud-line.Focused .container > [no-focus-white].icon:before, weather-preset-plan weather-preset-plan-cloud-line[dragging=true] [no-focus-white].icon:before, weather-preset-plan weather-preset-plan-cloud-line[resizing=true] [no-focus-white].icon:before {
+  background-color: transparent !important;
+}
+weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsDragging icon-button:before, weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsResizing icon-button:before, weather-preset-plan weather-preset-plan-wind-line.Focused .container > .icon:before, weather-preset-plan weather-preset-plan-cloud-line.Focused .container > .icon:before, weather-preset-plan weather-preset-plan-cloud-line[dragging=true] .icon:before, weather-preset-plan weather-preset-plan-cloud-line[resizing=true] .icon:before {
+  transform: rotateX(0);
+  content: "";
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  left: var(--outlineOffset);
+  top: var(--outlineOffset);
+  right: var(--outlineOffset);
+  bottom: var(--outlineOffset);
+  border: var(--outlineWidth) solid var(--enabledHoverBackgroundColor);
+  background-color: var(--color-white-op30);
+  z-index: 2;
+  animation: outlineFocusAppear 0.2s backwards;
+}
+weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsDragging icon-button.selected:before, weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsResizing icon-button.selected:before, weather-preset-plan weather-preset-plan-wind-line.Focused .container > .selected.icon:before, weather-preset-plan weather-preset-plan-cloud-line.Focused .container > .selected.icon:before, weather-preset-plan weather-preset-plan-cloud-line[dragging=true] .selected.icon:before, weather-preset-plan weather-preset-plan-cloud-line[resizing=true] .selected.icon:before {
+  border-width: var(--quartMargin);
+}
+weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsDragging icon-button > .parent-is-highlighted, weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsResizing icon-button > .parent-is-highlighted, weather-preset-plan weather-preset-plan-wind-line.Focused .container > .icon > .parent-is-highlighted, weather-preset-plan weather-preset-plan-cloud-line.Focused .container > .icon > .parent-is-highlighted, weather-preset-plan weather-preset-plan-cloud-line[dragging=true] .icon > .parent-is-highlighted, weather-preset-plan weather-preset-plan-cloud-line[resizing=true] .icon > .parent-is-highlighted {
+  position: relative;
+  z-index: 4;
+}
+
+weather-preset-plan {
+  flex: 1 auto;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--w_panelBgc);
+  padding: var(--padding) calc(calc(var(--screenHeight) * (60px / 1080) ) + var(--padding) * 2);
+  --altitudeLineColor: white;
+  --cloudLineBackgroundColor: var(--backgroundColorPanel);
+  --cloudLineSelectedColor: var(--activeColor);
+  --cloudLineSelectedBackgroundColor: var(--color-white-op50);
+  --cloudLineBorderColor: var(--primaryColor);
+  --cloudLineBorderColorSelected: var(--color-white);
+  --cloudLineIconColor: white;
+  --cloudLineIconBackgroundColor: var(--primaryColor);
+}
+weather-preset-plan .top-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: calc(var(--screenHeight) * (24px / 1080) );
+}
+weather-preset-plan .top-buttons new-push-button {
+  width: 100%;
+  text-align: center;
+}
+weather-preset-plan .plan {
+  flex: 1 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: calc(var(--screenHeight) * (120px / 1080) );
+  margin-bottom: calc(var(--screenHeight) * (24px / 1080) );
+  overflow: visible;
+  background: var(--backgroundColorContrastedPanel);
+}
+weather-preset-plan .plan > div {
+  position: absolute;
+  flex: 1 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+weather-preset-plan .bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+weather-preset-plan .bottom-buttons new-push-button {
+  width: 100%;
+  text-align: center;
+}
+weather-preset-plan .altitude-lines {
+  pointer-events: none;
+}
+weather-preset-plan .altitude-lines.lines {
+  z-index: 1;
+}
+weather-preset-plan .altitude-lines.labels {
+  z-index: 3;
+}
+weather-preset-plan .altitude-lines.lines weather-preset-plan-altitude-line {
+  z-index: -1;
+}
+weather-preset-plan .altitude-lines.labels weather-preset-plan-altitude-line {
+  z-index: 2;
+}
+weather-preset-plan .handle-lines {
+  position: relative;
+  z-index: 100;
+  pointer-events: none;
+}
+weather-preset-plan weather-preset-plan-altitude-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+weather-preset-plan weather-preset-plan-altitude-line .container {
+  position: relative;
+}
+weather-preset-plan weather-preset-plan-altitude-line .container label {
+  display: block;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: right;
+  padding-right: calc(var(--screenHeight) * (8px / 2160) );
+  padding-bottom: calc(var(--screenHeight) * (8px / 2160) );
+}
+weather-preset-plan weather-preset-plan-altitude-line .container label span {
+  text-transform: lowercase;
+}
+weather-preset-plan weather-preset-plan-altitude-line .container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--altitudeLineColor);
+}
+weather-preset-plan weather-preset-plan-altitude-line.inverted .container label {
+  text-align: left;
+  padding-left: var(--halfPadding);
+  padding-right: 0;
+}
+weather-preset-plan weather-preset-plan-altitude-line.dotted .container::before {
+  background: linear-gradient(to right, var(--altitudeLineColor) 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(blue 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(to right, green 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(red 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: top, right, bottom, left;
+  background-repeat: repeat-x, repeat-y;
+  background-size: calc(var(--screenHeight) * (7px / 1080) ) calc(var(--screenHeight) * (1px / 1080) ), calc(var(--screenHeight) * (1px / 1080) ) calc(var(--screenHeight) * (7px / 1080) );
+}
+weather-preset-plan weather-preset-plan-cloud-line {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  --tc: var(--enabledColor);
+  --bgc: var(--enabledBackgroundColor);
+  --iconDimension: calc(var(--screenHeight) * (50px / 1080) );
+}
+weather-preset-plan weather-preset-plan-cloud-line[dragging=true], weather-preset-plan weather-preset-plan-cloud-line[resizing=true] {
+  z-index: 12;
+}
+weather-preset-plan weather-preset-plan-cloud-line[selected=true] {
+  z-index: 11;
+}
+weather-preset-plan weather-preset-plan-cloud-line.selected .container .background, weather-preset-plan weather-preset-plan-cloud-line.Focused .container .background {
+  background: var(--cloudLineSelectedBackgroundColor);
+}
+weather-preset-plan weather-preset-plan-cloud-line[dragging=true] .container .background .border-top,
+weather-preset-plan weather-preset-plan-cloud-line[dragging=true] .container .background .border-bottom {
+  background: var(--enabledHoverBackGroundColor);
+}
+weather-preset-plan weather-preset-plan-cloud-line.Focused {
+  z-index: 10;
+}
+weather-preset-plan weather-preset-plan-cloud-line.clicked, weather-preset-plan weather-preset-plan-cloud-line[dragging=true], weather-preset-plan weather-preset-plan-cloud-line[resizing=true] {
+  --tc: var(--activeColor);
+  --bgc: var(--activeBackGroundColor);
+}
+weather-preset-plan weather-preset-plan-cloud-line.clicked .icon, weather-preset-plan weather-preset-plan-cloud-line[dragging=true] .icon, weather-preset-plan weather-preset-plan-cloud-line[resizing=true] .icon {
+  --bgc: var(--activeBackGroundColor);
+}
+weather-preset-plan weather-preset-plan-cloud-line.clicked[resizingaltitude=bottom] .border-bottom, weather-preset-plan weather-preset-plan-cloud-line[dragging=true][resizingaltitude=bottom] .border-bottom, weather-preset-plan weather-preset-plan-cloud-line[resizing=true][resizingaltitude=bottom] .border-bottom {
+  background: var(--enabledHoverBackGroundColor);
+}
+weather-preset-plan weather-preset-plan-cloud-line.clicked[resizingaltitude=top] .border-top, weather-preset-plan weather-preset-plan-cloud-line[dragging=true][resizingaltitude=top] .border-top, weather-preset-plan weather-preset-plan-cloud-line[resizing=true][resizingaltitude=top] .border-top {
+  background: var(--enabledHoverBackGroundColor);
+}
+weather-preset-plan weather-preset-plan-cloud-line .container {
+  position: relative;
+  flex: 1 auto;
+}
+weather-preset-plan weather-preset-plan-cloud-line .container .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--cloudLineBackgroundColor);
+  z-index: 0;
+}
+weather-preset-plan weather-preset-plan-cloud-line .container .border-top,
+weather-preset-plan weather-preset-plan-cloud-line .container .border-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: calc(var(--screenHeight) * (3px / 1080) );
+  background: var(--cloudLineBorderColor);
+  z-index: 1;
+}
+weather-preset-plan weather-preset-plan-cloud-line .container .border-top {
+  top: 0;
+}
+weather-preset-plan weather-preset-plan-cloud-line .container .border-top::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: calc(var(--screenHeight) * (20px / 1080) );
+  transform: translateY(-75%);
+}
+weather-preset-plan weather-preset-plan-cloud-line .container .border-bottom {
+  bottom: 0;
+}
+weather-preset-plan weather-preset-plan-cloud-line .container .border-bottom::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: calc(var(--screenHeight) * (20px / 1080) );
+  transform: translateY(-15%);
+}
+weather-preset-plan weather-preset-plan-cloud-line .container > .icon {
+  display: flex;
+  position: absolute !important;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  right: 100%;
+  bottom: 0;
+  width: var(--iconDimension);
+  min-height: var(--iconDimension);
+  height: 100%;
+  z-index: 2;
+}
+weather-preset-plan weather-preset-plan-cloud-line .container > .icon icon-element {
+  font-size: var(--fontSizeDefault);
+  z-index: 3;
+  --iconColor: var(--tc);
+  --width: var(--iconDimension);
+  --height: var(--iconDimension);
+}
+weather-preset-plan weather-preset-plan-cloud-line .container > .icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: var(--iconDimension);
+  height: 100%;
+  background: var(--bgc);
+}
+weather-preset-plan weather-preset-plan-wind-line {
+  display: flex;
+  position: absolute;
+  height: calc(var(--screenHeight) * (4px / 1080) );
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transform: translateY(-100%);
+  background: var(--cloudLineBorderColor);
+  --tc: var(--enabledColor);
+  --bgc: var(--enabledBackgroundColor);
+  --iconDimension: calc(var(--screenHeight) * (50px / 1080) );
+}
+weather-preset-plan weather-preset-plan-wind-line[dragging=true] {
+  z-index: 12;
+}
+weather-preset-plan weather-preset-plan-wind-line[selected=true] {
+  z-index: 11;
+}
+weather-preset-plan weather-preset-plan-wind-line.selected {
+  /*background-color: var(--cloudLineBorderColorSelected);*/
+}
+weather-preset-plan weather-preset-plan-wind-line.Focused {
+  z-index: 10;
+}
+weather-preset-plan weather-preset-plan-wind-line.Focused .container > .icon {
+  position: absolute;
+}
+weather-preset-plan weather-preset-plan-wind-line.clicked, weather-preset-plan weather-preset-plan-wind-line[dragging=true] {
+  --tc: var(--activeColor);
+  --bgc: var(--activeBackGroundColor);
+}
+weather-preset-plan weather-preset-plan-wind-line .container {
+  position: relative;
+  flex: 1 auto;
+}
+weather-preset-plan weather-preset-plan-wind-line .container > .icon {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  left: 100%;
+  bottom: 0;
+  width: var(--iconDimension);
+  height: var(--iconDimension);
+  background: var(--bgc);
+  z-index: 2;
+}
+weather-preset-plan weather-preset-plan-wind-line .container > .icon icon-element {
+  margin-top: calc(var(--screenHeight) * (5px / 1080) );
+  font-size: var(--fontSizeDefault);
+  --iconColor: var(--tc);
+  --width: var(--iconDimension);
+  --height: var(--iconDimension);
+  z-index: 3;
+}
+weather-preset-plan weather-preset-plan-wind-line .container > .icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: var(--iconDimension);
+  height: var(--iconDimension);
+  background: var(--bgc);
+}
+weather-preset-plan weather-preset-plan-altitude-handle {
+  display: none;
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  flex-direction: row;
+  align-items: center;
+  min-width: 0;
+  width: auto;
+  height: calc(var(--screenHeight) * (22px / 1080) );
+  pointer-events: auto;
+  margin-left: var(--quartMargin);
+}
+weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsResizing icon-button {
+  --bgc: var(--selectedColor);
+}
+weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsDragging icon-button {
+  --bgc: var(--selectedColor);
+}
+weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsDragging icon-button::before {
+  border: 0;
+  --outlineWidth: get-size(1);
+  --outlineOffset: calc(-1 * var(--outlineWidth));
+}
+weather-preset-plan weather-preset-plan-altitude-handle:hover, weather-preset-plan weather-preset-plan-altitude-handle.cloudLayerIsSelected, weather-preset-plan weather-preset-plan-altitude-handle.Focused, weather-preset-plan weather-preset-plan-altitude-handle.focusingAnHandle, weather-preset-plan weather-preset-plan-altitude-handle.CloudLayerIsFocused {
+  display: flex;
+}
+weather-preset-plan weather-preset-plan-altitude-handle icon-button {
+  width: calc(var(--screenHeight) * (33px / 1080) );
+  height: calc(var(--screenHeight) * (22px / 1080) );
+}
+weather-preset-plan weather-preset-plan-altitude-handle icon-button icon-element {
+  width: calc(100% - var(--halfPadding));
+  height: calc(100% - var(--halfPadding));
+}
+weather-preset-plan weather-preset-plan-altitude-handle label {
+  display: flex;
+  width: auto;
+  margin-left: calc(var(--quartMargin) * -1);
+  padding: 0 var(--quartPadding) 0 var(--halfPadding);
+  background: var(--backgroundColorPanel);
+}
+weather-preset-plan weather-preset-plan-altitude-handle label span {
+  margin-left: var(--quartMargin);
+}
+weather-preset-plan weather-preset-plan-altitude-handle.top {
+  transform: translateY(-100%);
+}
+weather-preset-plan weather-preset-plan-altitude-handle.top label,
+weather-preset-plan weather-preset-plan-altitude-handle.top icon-button {
+  border-top-left-radius: calc(var(--screenHeight) * (4px / 1080) );
+  border-top-right-radius: calc(var(--screenHeight) * (4px / 1080) );
+}
+weather-preset-plan weather-preset-plan-altitude-handle.top label::before,
+weather-preset-plan weather-preset-plan-altitude-handle.top icon-button::before {
+  border-top-left-radius: calc(var(--screenHeight) * (4px / 1080) );
+  border-top-right-radius: calc(var(--screenHeight) * (4px / 1080) );
+}
+weather-preset-plan weather-preset-plan-altitude-handle.bottom label,
+weather-preset-plan weather-preset-plan-altitude-handle.bottom icon-button {
+  border-bottom-left-radius: calc(var(--screenHeight) * (4px / 1080) );
+  border-bottom-right-radius: calc(var(--screenHeight) * (4px / 1080) );
+}
+weather-preset-plan weather-preset-plan-altitude-handle.bottom label::before,
+weather-preset-plan weather-preset-plan-altitude-handle.bottom icon-button::before {
+  border-bottom-left-radius: calc(var(--screenHeight) * (4px / 1080) );
+  border-bottom-right-radius: calc(var(--screenHeight) * (4px / 1080) );
+}
+
+/*# sourceMappingURL=WeatherPresetPlan.css.map */

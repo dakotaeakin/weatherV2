@@ -1,0 +1,66 @@
+/** This mixin makes a single line element fit exactly on the Roboto font for easier integration. */
+/**
+ * Forces z-index above other siblings during a focused parent.
+*/
+date-picker {
+  display: block;
+}
+date-picker.date-picker--inline new-list-button:not(:last-child):after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  height: var(--minimalBorderWidth);
+  left: 0;
+  right: 0;
+  background-color: var(--listSeparatorColor);
+}
+
+weather-settings {
+  flex: 1 0;
+  min-height: 0;
+}
+weather-settings virtual-scroll {
+  height: 100%;
+  background-color: var(--w_panelBgc);
+}
+weather-settings .weather-settings-time {
+  margin-bottom: var(--margin);
+  padding: var(--padding);
+  background-color: var(--w_panelBgc);
+}
+weather-settings .weather-settings-main {
+  padding: var(--padding);
+  flex: 1 0 auto;
+}
+weather-settings .weather-settings-main inputable-range:not(:last-child), weather-settings .weather-settings-main new-list-button:not(:last-child) {
+  margin-bottom: var(--minimalBorderWidth);
+}
+
+.weather-settings__title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: calc(var(--screenHeight) * (-6px / 1080) );
+  font-family: var(--font);
+  font-size: var(--fontSizeDefault);
+  font-weight: 400;
+  margin-bottom: var(--halfMargin);
+  text-transform: uppercase;
+  min-height: calc(var(--screenHeight) * (36px / 1080) );
+}
+.weather-settings__title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 100%;
+  left: 0;
+  height: var(--minimalBorderWidth);
+  background: var(--color-white);
+}
+.weather-settings__close-button {
+  margin-left: var(--halfMargin);
+  flex: 0 0 auto;
+}
+
+/*# sourceMappingURL=WeatherSettings.css.map */

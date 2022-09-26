@@ -1,0 +1,58 @@
+/** This mixin makes a single line element fit exactly on the Roboto font for easier integration. */
+/**
+ * Forces z-index above other siblings during a focused parent.
+*/
+weather-cloud-layer-settings {
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--w_panelBgc);
+  padding: var(--halfMargin);
+  /*margin-top: get-vh(-24px);*/
+}
+weather-cloud-layer-settings .tabs {
+  display: flex;
+  flex: 1 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: calc(var(--screenHeight) * (24px / 2160) );
+}
+weather-cloud-layer-settings .tabs .buttonWrapper {
+  height: calc(var(--screenHeight) * (108px / 2160) );
+  display: flex;
+  margin-bottom: 0;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+weather-cloud-layer-settings .tabs .buttonWrapper > * {
+  margin-bottom: 0;
+}
+weather-cloud-layer-settings .tabs .buttonWrapper .toggleTab {
+  margin-top: auto;
+}
+weather-cloud-layer-settings .tabs .buttonWrapper .toggleTab + .toggleTab {
+  margin-left: calc(var(--screenHeight) * (4px / 2160) );
+}
+weather-cloud-layer-settings .tabs .buttonWrapper .toggleTab:not(.selected) {
+  flex: 1 0;
+}
+weather-cloud-layer-settings .tabs .Main,
+weather-cloud-layer-settings .tabs .Option {
+  /*border-top: var(--minimalBorderWidth) solid white;*/
+  height: 100%;
+}
+weather-cloud-layer-settings .tabs .Main .input-wrap,
+weather-cloud-layer-settings .tabs .Option .input-wrap {
+  display: block;
+}
+weather-cloud-layer-settings .tabs .Main .input-wrap:not(:last-of-type),
+weather-cloud-layer-settings .tabs .Option .input-wrap:not(:last-of-type) {
+  margin-bottom: calc(var(--screenHeight) * (6px / 2160) );
+  padding-bottom: calc(var(--screenHeight) * (6px / 2160) );
+  border-bottom: var(--minimalBorderWidth) solid var(--listSeparatorColor);
+}
+weather-cloud-layer-settings .remove {
+  width: 100%;
+}
+
+/*# sourceMappingURL=WeatherCloudLayerSettings.css.map */

@@ -1,0 +1,52 @@
+﻿<!-- DOT NO LOAD ANY Dependencies here -->
+<link rel="stylesheet" href="./WeatherPresetPlan.css" />
+
+<script type="text/html" id="WeatherPresetPlanAltitudeLineTemplate" not-pad-interactive>
+    <div class="container">
+        <label></label>
+        <div class="separator"></div>
+    </div>
+</script>
+
+<script type="text/html" id="WeatherPresetPlanCloudLayerLineTemplate" not-pad-interactive>
+    <div class="container">
+        <div class="background">
+            <div class="border border-top" tabIndex="1"></div>
+            <div class="border border-bottom" tabIndex="2"></div>
+        </div>
+        <div class="icon condensed-interactive">
+            <icon-element data-url="/icons/weather/overcast_layer.svg"></icon-element>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="WeatherPresetPlanWindLayerLineTempalate" not-pad-interactive>
+    <div class="container">
+        <div class="icon condensed-interactive">
+            <icon-element data-url="/icons/weather/wind_layer.svg"></icon-element>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="WeatherPresetPlanAltitudeHandleElement" not-pad-interactive>
+    <icon-button class="condensed-interactive" icon-tooltip="Cloud layer limit " data-url="/icons/weather/cloud_resize_handle.svg"></icon-button>
+    <label></label>
+</script>
+
+<script type="text/html" id="WeatherPresetPlanTemplate" vertical-navigation>
+    <div class="top-buttons">
+        <!-- obsolete button, settings are always shown by default-->
+        <new-push-button title="TT:MENU.WEATHER_TOOLBAR_PANEL_PRESET_PLAN_SETTINGS" class="small settings hide" default-button></new-push-button>
+        <icon-button class="add-cloud hide" data-url="/icons/weather/add_cloud.svg"></icon-button>
+    </div>
+    <div class="plan">
+        <div class="altitude-lines lines"></div>
+        <div class="wind-lines"></div>
+        <div class="cloud-lines"></div>
+        <div class="altitude-lines labels"></div>
+        <div class="handle-lines"></div>
+    </div>
+    <div class="bottom-buttons">
+        <new-push-button class="add-wind small" title="TT:MENU.WEATHER.ADD_WIND_LAYER"></new-push-button>
+    </div>
+</script>
+<script type="text/html" import-script="/templates/WeatherEditionMenu/WeatherEditionMenuTemplates/WeatherPresetPlan/WeatherPresetPlan.js"></script>

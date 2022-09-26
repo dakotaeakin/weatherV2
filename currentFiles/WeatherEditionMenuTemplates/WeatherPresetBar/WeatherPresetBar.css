@@ -1,0 +1,31 @@
+/** This mixin makes a single line element fit exactly on the Roboto font for easier integration. */
+/**
+ * Forces z-index above other siblings during a focused parent.
+*/
+weather-preset-bar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: visible;
+}
+weather-preset-bar drop-down {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: visible;
+  height: calc(var(--screenHeight) * (30px / 1080) );
+  --nbChild: 10;
+}
+weather-preset-bar > icon-button {
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: block;
+  margin: 0 calc(var(--screenHeight) * (6px / 2160) );
+}
+weather-preset-bar > icon-button:first-of-type {
+  margin-left: calc(var(--screenHeight) * (12px / 2160) );
+}
+weather-preset-bar > icon-button:last-of-type {
+  margin-right: 0;
+}
+
+/*# sourceMappingURL=WeatherPresetBar.css.map */

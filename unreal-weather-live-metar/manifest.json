@@ -1,0 +1,15 @@
+{
+  "dependencies": [],
+  "content_type": "MISC",
+  "title": "Unreal Weather - Live METAR",
+  "manufacturer": "https://unrealweather.blogspot.com/",
+  "creator": "Vivid Creations",
+  "package_version": "1.7.0",
+  "minimum_game_version": "1.18.13",
+  "release_notes": {
+    "neutral": {
+      "LastUpdate": "",
+      "OlderHistory": ""
+    }
+  }
+}
