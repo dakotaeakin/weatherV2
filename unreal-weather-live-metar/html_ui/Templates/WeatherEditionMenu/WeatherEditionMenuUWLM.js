@@ -56,7 +56,7 @@ const UnrealWeatherSettings = {
   //
   // Insert your METAR API key between the quotes below:
   //
-  metar_api_key: "SXGKdGWRj-EVYKYIJsQkJgLk5uL0gUjFEFYI9mZWZZY",
+  metar_api_key: "SXGKdGWRj-EVYKYIJsQkJgLk5uL0gUjFEFYI9mZWZZY", //Sample only, active token should be replaced locally
   metar_api_base_uri: "https://avwx.rest/api/",
   diagnostics_base_uri: "",
   metar_polling_frequency_minutes: 3,
