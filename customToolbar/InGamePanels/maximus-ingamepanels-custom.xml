@@ -1,0 +1,7 @@
+<Project Version="2" Name="better-weather" FolderName="Packages">
+	<OutputDirectory>Buld/</OutputDirectory>
+	<TemporaryOutputDirectory>_Temp</TemporaryOutputDirectory>
+	<Packages>
+		<Package>PackageDefinitions\maximus-ingamepanels-custom.xml</Package>
+	</Packages>
+</Project>

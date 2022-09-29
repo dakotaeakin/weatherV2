@@ -1,0 +1,24 @@
+{
+  "content": [
+    {
+      "path": "html_ui/InGamePanels/BetterWeather/BetterWeather.css",
+      "size": 581,
+      "date": 132929600830956032
+    },
+    {
+      "path": "html_ui/InGamePanels/BetterWeather/BetterWeather.html",
+      "size": 1376,
+      "date": 132711792333375273
+    },
+    {
+      "path": "html_ui/InGamePanels/BetterWeather/BetterWeather.js",
+      "size": 639,
+      "date": 132929594423702989
+    },
+    {
+      "path": "InGamePanels/BetterWeather.spb",
+      "size": 731,
+      "date": 132929622238215634
+    }
+  ]
+}

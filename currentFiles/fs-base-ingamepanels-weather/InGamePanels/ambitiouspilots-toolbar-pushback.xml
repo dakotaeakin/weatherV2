@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<SimBase.Document Type="InGamePanels" version="1,0">
+  <Filename>ambitiouspilots-toolbar-pushback.spb</Filename>
+  <InGamePanels.InGamePanelDefinition id="PANEL_TOOLBAR_PUSHBACK" Name="PUSHBACK" url="html_UI/ingamePanels/PanelToolbarPushback/PanelToolbarPushback.html" resizeDirections="Both" minWidth="36.000" minHeight="42.000" defaultWidth="36.000" defaultHeight="42.000" defaultTop="30.000" defaultRight="2.000" icon="ICON_TOOLBAR_PUSHBACK" buttonVisible="true" />
+</SimBase.Document>

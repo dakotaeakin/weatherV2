@@ -1,0 +1,22 @@
+<AssetPackage Name="better-weather" Version="2.0.0">
+	<ItemSettings>
+		<ContentType>SPB</ContentType>
+		<Title>better-weather</Title>
+		<Manufacturer>VD</Manufacturer>
+		<Creator>VD</Creator>
+	</ItemSettings>
+	<Flags>
+		<VisibleInStore>false</VisibleInStore>
+		<CanBeReferenced>false</CanBeReferenced>
+	</Flags>
+	<AssetGroups>
+		<AssetGroup Name="better-weather">
+			<Type>SPB</Type>
+			<Flags>
+				<FSXCompatibility>false</FSXCompatibility>
+			</Flags>
+			<AssetDir>PackageSources\</AssetDir>
+			<OutputDir>Build\</OutputDir>
+		</AssetGroup>
+	</AssetGroups>
+</AssetPackage>
